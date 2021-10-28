@@ -1,0 +1,34 @@
+#生产环境——正式提供对外服务的，一般会关掉错误报告，打开错误日志
+
+spring:
+#数据库ddl的一个方式（关于数据表结构，更新表结构）,
+#update-每次连接数据库的时候比对当前项目实体对象和数据库表结构的字段是否一样，如果实体做了变动会自动更新表结构
+#none-实体类确定了，就不要改变了，避免将数据库搞丢
+#create-每次启动都会清除数据库，重新创建
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true  #把sql语句输出在控制台
+#不是必须的如果引用了mysql会自动适应
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+
+
+logging:
+  level:   #全局日志的级别
+    root: warn   #springboot框架本身的级别，默认info，更高warn
+    com.xzy.bolg: info  #自定义的包的级别
+#默认的日志模式，个性化的可以采用logback-spring.xml
+  file:
+    name: log/blog-pro.log  #在该文件夹下生成日志，默认10M
+#生产环境端口
+server:
+  port: 8081
+
+
+
+
+

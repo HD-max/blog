@@ -1,14 +1,14 @@
-
-
 # Spring Boot开发小而美的个人博客
 
 >  作者：李仁密
 
 
-
-**个人博客功能：**
-
-![](https://ws2.sinaimg.cn/large/006tKfTcgy1fk7m27hbn4j31ds0ycdnp.jpg)
+**个人博客必看：**
+（上述才是原作者，我只是做了项目更改）
+下载以后直接放在idea上面运行，我的idea是2020.1版本，数据库是mysql8.0，jdk是1.8
+数据库信息请在target目录下的application—dev.yml中修改，目前用的是开发环境，仅需修改它就行
+主页URL：http://localhost:8080
+后台管理URL：http://localhost:8080/admin
 
 **技术组合：**
 

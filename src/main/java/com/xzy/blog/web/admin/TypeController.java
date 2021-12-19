@@ -45,7 +45,7 @@ public class TypeController {
     }
 
     @PostMapping("/types")
-    public String post(@Valid Type type, BindingResult result, RedirectAttributes attributes){  //提交。新增
+    public String post(@Valid Type type,BindingResult result, RedirectAttributes attributes){  //提交。新增
         Type type1 = typeService.getTypeByName(type.getName());  //先获取数据库里的type
         if(type1 != null){  //已经存在新增的type的name
             result.rejectValue("name","nameError","不能添加重复的分类");

@@ -1,0 +1,20 @@
+#原本的后缀是properties，改成了yml-专门做配置的格式。顶级
+
+spring:
+  #thymeleaf3配置
+  thymeleaf:
+    mode: HTML
+  #当前使用的配置，可以设定dev或者pro
+  profiles:
+    active: dev
+  messages:
+    basename: i18n/messages
+
+  #博客评论头像的路径设置
+comment.avatar: /images/avatar.png
+
+
+
+
+
+

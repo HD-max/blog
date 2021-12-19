@@ -1,0 +1,22 @@
+<!--自定义，开发者故意写的，隐藏在页面中，方便调试-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>错误</title>
+</head>
+<body>
+   <h1>错误</h1>
+   <!--springboot官网里提供的-->
+   <!--所有的tag全部移除，最后以文本信息显示出来-->
+   <div>
+       <div th:utext="'&lt;!--'" th:remove="tag"></div><!--&lt转义字符，注释左边的东西。remove移除掉html的tag标签-->
+       <div th:utext="'Failed Request URL : ' + ${url}" th:remove="tag"></div><!--请求的request的URL，打印出来-->
+       <div th:utext="'Exception message : ' + ${exception.message}" th:remove="tag"></div><!--exception异常信息-->
+       <ul th:remove="tag">
+           <li th:each="st : ${exception.stackTrace}" th:remove="tag"><span th:utext="${st}" th:remove="tag"></span></li><!--each循环，拿到堆栈信息，循环一遍，把堆栈里的异常信息都显示到页面上-->
+       </ul>
+       <div th:utext="'--&gt;'" th:remove="tag"></div><!--注释左边的东西-->
+   </div>
+</body>
+</html>
